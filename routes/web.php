@@ -28,11 +28,8 @@ Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name
 Route::get('/about-us',[HomepageController::class, 'aboutus'])->name('homepage.aboutus');
 Route::get('/contact-us',[HomepageController::class, 'contactus'])->name('homepage.contactus');
 
-Auth::routes();
-
 Route::get('/app/admin/users', [AdminUser::class, 'index'])->name('app.admin.users.index');
 Route::get('/app/admin', [AdminDashboard::class, 'index'])->name('app.admin.index');
-
 
 Route::get('/adminlte/dashboard', [UpcomingClassController::class, 'index'])->name('app.admin.classes.index');
 Route::get('/app/admin/classes/create', [UpcomingClassController::class, 'create'])->name('app.admin.classes.create');
