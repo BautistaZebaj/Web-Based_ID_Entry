@@ -29,16 +29,19 @@ class StudentsController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'course_id' => 'required|min:4|max:255',
+            'level' => 'required|min:1|max:255',
+            'class' => 'required|min:1|max:255',
             'fname' => 'required|min:2|max:255',
+            'mname' => 'required|min:2|max:255',
             'lname' => 'required|min:2|max:255',
             'gender' => 'required|in:Male,Female,Other'
         ]);
-
+    
         $student = Student::create($data);
-
+    
         return redirect()->route('app.admin.students.index')->with('status', 'Student has been successfully added!');
     }
+    
 
     public function destroy(Student $student)
     {
@@ -55,8 +58,9 @@ class StudentsController extends Controller
     public function update(Request $request, Student $student)
     {
         $data = $request->validate([
-            'class' => 'required|min:4|max:255',
+            'class' => 'required|min:1|max:255',
             'fname' => 'required|min:2|max:255',
+            'mname' => 'required|min:2|max:255',
             'lname' => 'required|min:2|max:255',
             'gender' => 'required|in:Male,Female,Other'
         ]);

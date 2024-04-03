@@ -30,7 +30,7 @@ class CourseController extends Controller
     public function store(Request $request)
     {
         $data = $request->validate([
-            'name' => 'required|min:4|max:255|unique:course',
+            'name' => 'required|min:4|max:255|unique:courses',
             'user_id' => 'required|int',
             'level' => 'required',
             'School_year' => 'required'
@@ -39,8 +39,8 @@ class CourseController extends Controller
         $course = Course::create([
             'name' => $data['name'],
             'user_id' => $data['user_id'],
-            'level' => $data($data['level']),
-            'School_year' => $data($data['School_year']),
+            'level' => $data['level'],
+            'School_year' => $data['School_year'],
         ]);
 
         return redirect()->route('app.admin.classes.index')->with('status', 'Class has been successfully added!');

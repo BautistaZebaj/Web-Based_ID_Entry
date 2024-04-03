@@ -16,12 +16,9 @@
                 <label for="level">Level:</label>
                 <select name="level" id="level" class="form-control" required>
                     <option value="">Select Level</option>
-                    <option value="12">12</option>
-                    <option value="11">11</option>
-                    <option value="10">10</option>
-                    <option value="9">9</option>
-                    <option value="8">8</option>
-                    <option value="7">7</option>
+                    @for($i = 12; $i >= 7; $i--)
+                        <option value="{{ $i }}">{{ $i }}</option>
+                    @endfor
                 </select>
             </div>
             <div class="form-group">
@@ -33,6 +30,10 @@
             <div class="form-group">
                 <label for="fname">First Name:</label>
                 <input type="text" name="fname" id="fname" class="form-control" required>
+            </div>
+            <div class="form-group">
+                <label for="mname">Middle Name:</label>
+                <input type="text" name="mname" id="mname" class="form-control" required>
             </div>
             <div class="form-group">
                 <label for="lname">Last Name:</label>
@@ -69,17 +70,10 @@
             var level = $(this).val();
             var options = '';
             if(level == '12') {
-                options = '<option value="1">ICT</option>' +
-                          '<option value="2">HUMMS1</option>' +
-                          '<option value="3">HUMMS2</option>' +
-                          '<option value="4">HUMMS3</option>' +
-                          '<option value="5">HUMMS4</option>' +
-                          '<option value="6">STEM</option>' +
-                          '<option value="7">HE1</option>' +
-                          '<option value="8">HE2</option>' +
-                          '<option value="9">ABM</option>';
-            } else if(level == '11') {
-                // Add options for level 11
+                var classes = ['ICT', 'HUMMS1', 'HUMMS2', 'HUMMS3', 'HUMMS4', 'STEM', 'HE1', 'HE2', 'ABM'];
+                classes.forEach(function(cls) {
+                    options += '<option value="' + cls + '">' + cls + '</option>';
+                });
             }
             // Add other level cases as needed
             $('#class').html(options);

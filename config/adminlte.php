@@ -323,7 +323,7 @@ return [
         ],
         [
             'text'        => ' Manage Students',
-            'url'         => '',
+            'url'         => 'app/admin/students',
             'icon'        => 'nav-icon fas fa-users',
             'label_color' => 'success',
         ],

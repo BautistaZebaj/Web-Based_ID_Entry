@@ -28,6 +28,7 @@
                         <th>ID</th>
                         <th>Class</th> <!-- New column for Class -->
                         <th>First Name</th>
+                        <th>Middle Name</th>
                         <th>Last Name</th>
                         <th>Gender</th>
                         <th>Action</th>
@@ -36,13 +37,13 @@
                 <tbody>
                     @foreach($student as $students)
                     <tr>
-                        <td>{{ $students->id }}</td>
-                        <td>{{ $students->course->name}}</td> 
-                        <td>{{ $students->fname }}</td>
-                        <td>{{ $students->lname }}</td>                     
-                        <td>{{ $students->gender }}</td>
-                        <td>
-                        </td>
+                    <td>{{ $students->id }}</td>
+                    <td>{{ $students->course->getClassname() }}</td>
+                    <td>{{ $students->fname }}</td>
+                    <td>{{ $students->mname }}</td>
+                    <td>{{ $students->lname }}</td>
+                    <td>{{ $students->gender }}</td>
+                    
                     </tr>
                     @endforeach
                 </tbody>
