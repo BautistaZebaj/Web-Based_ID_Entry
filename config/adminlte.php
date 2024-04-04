@@ -297,8 +297,7 @@ return [
             'icon'        => 'nav-icon fas fa-tachometer-alt',
             'label_color' => 'success',
         ],
-      
-      
+
         [
             'text'        => 'Upcoming Events',
             'url'         => '/app/admin/events',
@@ -309,7 +308,7 @@ return [
         [
             'text'        => 'Manage Classes',
             'url'         => 'app/admin/classes ',
-            'icon'        => 'nav-icon fas fa-users',
+            'icon'        => 'nav-icon fas fa-layer-group',
             'label_color' => 'success',
         ],
   
@@ -323,8 +322,8 @@ return [
         ],
         [
             'text'        => ' Manage Students',
-            'url'         => 'app/admin/students',
-            'icon'        => 'nav-icon fas fa-users',
+            'url'         => '',
+            'icon'        => 'nav-icon fas fa-school',
             'label_color' => 'success',
         ],
 

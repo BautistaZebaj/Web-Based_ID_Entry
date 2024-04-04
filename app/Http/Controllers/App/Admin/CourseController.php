@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Models\Course;
 use App\Models\Student;
+use App\Models\User;
 
 class CourseController extends Controller
 {
@@ -24,7 +25,8 @@ class CourseController extends Controller
 
     public function create()
     {
-        return view('app.admin.classes.create');
+        $teachers = User::get(); // Assuming 'role' is a column in your users table indicating the role of the user
+        return view('app.admin.classes.create', compact('teachers'));
     }
 
     public function store(Request $request)
@@ -48,7 +50,7 @@ class CourseController extends Controller
 
     public function destroy(Course $course)
     {
-        $courses->delete();
+        $course->delete();
 
         return redirect()->route('app.admin.classes.index')->with('status', 'Class has been successfully deleted!');
     }
