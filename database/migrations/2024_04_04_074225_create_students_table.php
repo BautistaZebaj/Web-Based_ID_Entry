@@ -15,12 +15,15 @@ return new class extends Migration
     {
         Schema::create('students', function (Blueprint $table) {
             $table->id();
-            $table->unsignedBigInteger('course_id');
+            $table->bigInteger('course_id');
             $table->string('fname');
+            $table->string('mname');
             $table->string('lname');
             $table->string('suffix')->nullable();
             $table->string('gender');
             $table->timestamps();
+
+           
         });
     }
 
@@ -34,3 +37,4 @@ return new class extends Migration
         Schema::dropIfExists('students');
     }
 };
+

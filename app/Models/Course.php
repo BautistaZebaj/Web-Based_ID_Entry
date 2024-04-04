@@ -27,7 +27,11 @@ class Course extends Model
         return $this->belongsTo(User::class);
     }
 
-
+    public function create()
+    {
+        $courses = Course::all(); 
+        return view('app.admin.students.create', compact('courses'));
+    }
     public function getClassname()
     {
         return $this->name;

@@ -15,7 +15,14 @@ return new class extends Migration
     {
         Schema::create('courses', function (Blueprint $table) {
             $table->id();
+            $table->string('name');
+            $table->bigInteger('user_id')->unsigned(); // Assuming this is a foreign key
+            $table->string('level');
+            $table->string('school_year');
             $table->timestamps();
+            
+            // Define foreign key constraint
+            $table->foreign('user_id')->references('id')->on('users')->onDelete('cascade');
         });
     }
 

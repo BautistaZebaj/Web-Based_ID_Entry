@@ -38,7 +38,7 @@
                     @foreach($student as $students)
                     <tr>
                     <td>{{ $students->id }}</td>
-                    <td>{{ $students->course->getClassname() }}</td>
+                    <td>{{ $students->course->name }}</td>
                     <td>{{ $students->fname }}</td>
                     <td>{{ $students->mname }}</td>
                     <td>{{ $students->lname }}</td>
